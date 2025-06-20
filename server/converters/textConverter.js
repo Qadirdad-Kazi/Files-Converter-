@@ -56,8 +56,9 @@ async function convertTextToPdf(text, _filename) {
     const isControlChar = (char) => {
       const code = char.charCodeAt(0);
       // Keep tab (9), newline (10), and carriage return (13)
-      return (code <= 31 || (code >= 127 && code <= 159)) && 
-             code !== 9 && code !== 10 && code !== 13;
+      return (
+        (code <= 31 || (code >= 127 && code <= 159)) && code !== 9 && code !== 10 && code !== 13
+      );
     };
 
     // Sanitize the text by removing control characters and normalizing line endings
@@ -65,8 +66,7 @@ async function convertTextToPdf(text, _filename) {
       return text
         .replace(/\r\n?/g, '\n')
         .split('')
-        .map(char => (isControlChar(char) ? ' ' : 
-          (char.charCodeAt(0) <= 255 ? char : ' ')))
+        .map((char) => (isControlChar(char) ? ' ' : char.charCodeAt(0) <= 255 ? char : ' '))
         .join('');
     })();
 
