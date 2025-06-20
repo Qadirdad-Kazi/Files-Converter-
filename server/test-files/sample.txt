@@ -1,0 +1,11 @@
+This is a sample text file for testing the document converter.
+
+It includes multiple paragraphs to test the conversion process.
+
+- List item 1
+- List item 2
+- List item 3
+
+And some **bold** and *italic* text for formatting tests.
+
+End of test file.
